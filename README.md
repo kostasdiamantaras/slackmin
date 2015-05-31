@@ -5,7 +5,7 @@ This is a MATLAB implementation of the plain vanilla Slackmin algorithm presente
 [M. Kotti, K. I. Diamantaras, "Efficient Binary Classification Through Energy Minimisation of Slack Variables",
 Neurocomputing, Elsevier, Vol. 148, pp. 498–511, DOI: 10.1016/j.neucom.2014.07.013, January 2015] (http://www.sciencedirect.com/science/article/pii/S0925231214008911)
 
-This implementation does not contain the search procedures for the finding the optimal hyper-parameters.
+This implementation does not contain the search procedures for finding the optimal hyper-parameters.
 
 ### Files:
 
@@ -62,6 +62,7 @@ Returns:
        Ιdeally (y>0) if t=+1,  (y<0) if t=-1
    accuracy = classification accuracy (value = double between 0 and 100)
 ```
+
 ----------
 
 #### dataset.mat
@@ -71,9 +72,11 @@ Matlab file containing the following matrices
    x = [18x4500] matrix with the input patterns (4500 patterns of 18 dimensions)
    t = [1x4500] vector with targets (-1/+1)
 ```
+
 ----------
 
 #### example_exper.m
 
 Matlab script demonstrating the use and performance of the Slackmin algorithm. It runs a 10-fold cross-validation classification experiment on the data found in *dataset.mat*. Compares the results of Slackmin against [LIBSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/).
+
 ----------
