@@ -12,7 +12,8 @@ This implementation does not contain the search procedures for the finding the o
 ----------
 
 #### slackmin_train.m
-Slackmin training algorithm.
+
+Matlab function implementing the *Slackmin* training algorithm.
 
 Usage: *[model, y, accuracy] = slackmin_train(x, t, params)*
 
@@ -43,7 +44,8 @@ Returns:
 -----------
 
 #### slackmin_sim.m
-Slackmin recall after training.
+
+Matlab function implementing the *Slackmin* recall (after the model has been trained).
 
 Usage: *[y, accuracy] = slackmin_sim(x, t, model)*
 ```
@@ -63,6 +65,7 @@ Returns:
 ----------
 
 #### dataset.mat
+
 Matlab file containing the following matrices
 ```
    x = [18x4500] matrix with the input patterns (4500 patterns of 18 dimensions)
@@ -71,6 +74,6 @@ Matlab file containing the following matrices
 ----------
 
 #### example_exper.m
-Matlab script demonstrating the use and performance of the Slackmin algorithm. It runs a 10-fold cross-validation classification experiment on the data found in *dataset.mat*.
-Compares the results of Slackmin against LIBSVM.
+
+Matlab script demonstrating the use and performance of the Slackmin algorithm. It runs a 10-fold cross-validation classification experiment on the data found in *dataset.mat*. Compares the results of Slackmin against [LIBSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/).
 ----------
