@@ -51,22 +51,22 @@ Ideally (y>0) if t=+1,  (y<0) if t=-1
 #### slackmin_sim.m
 Slackmin recall after training
 
-usage: [y, accuracy] = slackmin_sim(x, t, model)
+Usage: [y, accuracy] = slackmin_sim(x, t, model)
 
-   x = [nxP] pattern matrix
+>   x = [nxP] pattern matrix
      (n = pattern dimension, P = number of patterns)
 
-   t = [1xP] target vector (values = -1/1)
+>   t = [1xP] target vector (values = -1/1)
 
-   model = srtuct containing model parameters created by slackmin_train()
+>   model = srtuct containing model parameters created by slackmin_train()
 
 
 
 Returns:
 
-   y = output vector (values = double)
+>   y = output vector (values = double)
      ideally (y>0) if t=+1,  (y<0) if t=-1
 
-   accuracy = classification accuracy (value = double between 0 and 100)
+>   accuracy = classification accuracy (value = double between 0 and 100)
 
 ----------
