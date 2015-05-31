@@ -12,14 +12,14 @@ Neurocomputing, Elsevier, Vol. 148, pp. 498–511, DOI: 10.1016/j.neucom.2014.07
 #### slackmin_train.m
 Slackmin training algorithm.
 
-usage: [model, y, accuracy] = slackmin_train(x, t, params)
+>Usage: [model, y, accuracy] = slackmin_train(x, t, params)
 
-   x = [nxP] pattern matrix
+>   x = [nxP] pattern matrix
       (n = pattern dimension, P = number of patterns)
 
-   t = [1xP] target vector (values = -1/1)
+>   t = [1xP] target vector (values = -1/1)
    
-   params = struct(
+>   params = struct(
 > 'kernel', (values = 'linear'(default), 'rbf', 'poly'), ...
 > 'BASIS_SIZE', (values = interger between 1 and P, default = min(100,P)), ...
 > 'MAXEPOCHS', (values = number of training epochs, default = 20), ...
@@ -28,15 +28,15 @@ usage: [model, y, accuracy] = slackmin_train(x, t, params)
 > % parameters theta, d, for Polynomial kernel  K(x,y) = (x'*y + theta)^d:
 > 'theta', (values = double, default = 1), ...
 > 'd', (values = integer, default = 2) ...
-   )
+>   )
 
-Returns:
+>Returns:
 
-   y = output vector (values = double)
+>>   y = output vector (values = double)
    
 > ideally (y>0) if t=+1,  (y<0) if t=-1
       
-   accuracy = classification accuracy (value = double between 0 and 100)
+>>   accuracy = classification accuracy (value = double between 0 and 100)
 
 -----------
 
