@@ -11,7 +11,7 @@ This implementation does not contain the search procedures for finding the optim
 
 ----------
 
-#### slackmin_train.m
+#### [slackmin_train.m](https://github.com/kostasdiamantaras/slackmin/blob/master/slackmin_train.m)
 
 Matlab function implementing the *Slackmin* training algorithm.
 
@@ -43,7 +43,7 @@ Returns:
 
 -----------
 
-#### slackmin_sim.m
+#### [slackmin_sim.m](https://github.com/kostasdiamantaras/slackmin/blob/master/slackmin_sim.m)
 
 Matlab function implementing the *Slackmin* recall (after the model has been trained).
 
@@ -65,7 +65,7 @@ Returns:
 
 ----------
 
-#### dataset.mat
+#### [dataset.mat](https://github.com/kostasdiamantaras/slackmin/blob/master/dataset.mat)
 
 Matlab file containing the following matrices
 ```
@@ -75,7 +75,7 @@ Matlab file containing the following matrices
 
 ----------
 
-#### example_exper.m
+#### [example_exper.m](https://github.com/kostasdiamantaras/slackmin/blob/master/example_exper.m)
 
 Matlab script demonstrating the use and performance of the Slackmin algorithm. It runs a 10-fold cross-validation classification experiment on the data found in *dataset.mat*. Compares the results of Slackmin against [LIBSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/).
 
