@@ -43,7 +43,7 @@ Returns:
 -----------
 
 #### slackmin_sim.m
-Slackmin recall after training
+Slackmin recall after training.
 
 Usage: *[y, accuracy] = slackmin_sim(x, t, model)*
 ```
@@ -65,7 +65,12 @@ Returns:
 #### dataset.mat
 Matlab file containing the following matrices
 ```
-   x = [18x4500] matrix with the input patterns
+   x = [18x4500] matrix with the input patterns (4500 patterns of 18 dimensions)
    t = [1x4500] vector with targets (-1/+1)
 ```
+----------
+
+#### example_exper.m
+Matlab script demonstrating the use and performance of the Slackmin algorithm. It runs a 10-fold cross-validation classification experiment on the data found in *dataset.mat*.
+Compares the results of Slackmin against LIBSVM.
 ----------
