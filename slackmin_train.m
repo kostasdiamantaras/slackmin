@@ -134,8 +134,6 @@ for epoch = 1:MAXEPOCHS
         misclass_best = misclass;
     end
     % Update weights
-    %S = svd(K(:,subidx), 'econ');
-    %fprintf('    matrix condition: %e\n', S(end)/S(1));
     w = pinv(K(:,subidx)') * t(subidx)';
 end
 

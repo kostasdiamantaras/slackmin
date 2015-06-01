@@ -1,7 +1,9 @@
 clear; clc; close all;
 
+%%%%%%%%%% Load the demo dataset %%%%%%%%%%
 load('dataset.mat');
 
+%%%%%%%%%% Set the training paramaters %%%%%%%%%%
 params = struct( ...
     'kernel', 'rbf', ...
     'BASIS_SIZE', 200, ...
@@ -10,7 +12,7 @@ params = struct( ...
     'theta', 1, ...
     'd', 2);
 
-%SLACKMIN
+%%%%%%%%%% SET UP CROSS-VALIDATION EXPERIMENTS %%%%%%%%%%
 NUM_FOLDS = 10;
 PERCENT_OUT = 0.2;
 P = size(x,2);
@@ -20,17 +22,20 @@ accuracySVM_train = zeros(1, NUM_FOLDS);
 accuracySVM_test = zeros(1, NUM_FOLDS);
 timeSlackmin = zeros(1, NUM_FOLDS);
 timeSVM = zeros(1, NUM_FOLDS);
+
 for fold = 1:NUM_FOLDS
     fprintf('Fold #%-2d\n', fold);
     [train_idx, test_idx] = crossvalind('HoldOut', P, PERCENT_OUT);
-    % Train model
+    
+    % SLACKMIN
     timeStart = tic;
     [model, y, accuracy_train(fold)] = slackmin_train(x(:,train_idx), t(train_idx), params);
     timeSlackmin(fold) = toc(timeStart);% Test model
     [y_test, accuracy_test(fold)] = slackmin_sim(x(:,test_idx), t(test_idx), model);
+
     
-    
-    %SVM
+    % LIBSVM
+    % svmtrain parameters:
     % -t kernel_type : set type of kernel function (default 2)
     % 	0 -- linear: u'*v
     % 	1 -- polynomial: (gamma*u'*v + coef0)^degree
@@ -49,6 +54,8 @@ for fold = 1:NUM_FOLDS
     [~, vec, ~] = svmpredict(t(test_idx)', x(:,test_idx)', modelSVM);
     accuracySVM_test(fold) = vec(1);
 end
+
+%%%%%%%%%% PRINT RESULTS %%%%%%%%%%
 fprintf('\n***** OVERALL RESULTS *****\n\n');
 fprintf('>>>> Slackmin: Mean Train accuracy = %-0.2f\n', mean(accuracy_train));
 fprintf('>>>> Slackmin: Mean Test accuracy = %-0.2f\n', mean(accuracy_test));
