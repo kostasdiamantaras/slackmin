@@ -75,7 +75,7 @@ Matlab file containing the following matrices
 
 ----------
 
-#### [example_exper.m](https://github.com/kostasdiamantaras/slackmin/blob/master/example_exper.m)
+#### [demo.m](https://github.com/kostasdiamantaras/slackmin/blob/master/demo.m)
 
 Matlab script demonstrating the use and performance of the Slackmin algorithm. It runs a 10-fold cross-validation classification experiment on the data found in *dataset.mat*. Compares the results of Slackmin against [LIBSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/).
 
